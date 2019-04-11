@@ -1,4 +1,4 @@
 #!/bin/bash
 ##### Start Service app
 
-sudo systemctl start httpd
+sudo service httpd start

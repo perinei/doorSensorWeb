@@ -1,4 +1,4 @@
 #!/bin/bash
 # Delete doorSensor service
 
-sudo systemctl stop httpd
+sudo service httpd stop
