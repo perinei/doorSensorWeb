@@ -12,7 +12,7 @@ hooks:
   ApplicationStop:
     - location: scripts/ApplicationStop.sh
       timeout: 30
-      runas: roo
+      runas: root
   BeforeInstall:
     - location: scripts/BeforeInstall.sh
       timeout: 30
