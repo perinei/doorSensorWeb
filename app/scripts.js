@@ -21,11 +21,11 @@ request.onload = function () {
       card.setAttribute('class', 'card');
 
       const h1 = document.createElement('h1');
-      h1.textContent = movie.Serial;
+      h1.textContent = movie.Items.Serial;
 
       const p = document.createElement('p');
-      movie.status = movie.status.substring(0, 300);
-      p.textContent = `${movie.status}...`;
+      movie.Items.status = movie.Items.status.substring(0, 300);
+      p.textContent = `${movie.Items.status}...`;
 
       container.appendChild(card);
       card.appendChild(h1);
