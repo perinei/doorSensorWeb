@@ -6,7 +6,7 @@ container.setAttribute('class', 'container');
 app.appendChild(container);
 
 var request = new XMLHttpRequest();
-request.open('GET', 'https://ghibliapi.herokuapp.com/films', true);
+request.open('GET', 'https://zjvba121aj.execute-api.us-east-1.amazonaws.com/dev', true);
 request.onload = function () {
 
   // Begin accessing JSON data here
@@ -17,11 +17,11 @@ request.onload = function () {
       card.setAttribute('class', 'card');
 
       const h1 = document.createElement('h1');
-      h1.textContent = movie.title;
+      h1.textContent = movie.Items.Serial;
 
       const p = document.createElement('p');
-      movie.description = movie.substring(0, 300);
-      p.textContent = `${movie.description}...`;
+      movie.Items.Serial = movie.Items.Serial.substring(0, 300);
+      p.textContent = `${movie.Items.Serial}...`;
 
       container.appendChild(card);
       card.appendChild(h1);
