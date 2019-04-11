@@ -2,5 +2,4 @@
 
 #update the system
 
-# rm -rf /home/app/doorSensor
-
+rm -rf /var/www/html
