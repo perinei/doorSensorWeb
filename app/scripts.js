@@ -17,11 +17,11 @@ request.onload = function () {
       card.setAttribute('class', 'card');
 
       const h1 = document.createElement('h1');
-      h1.textContent = movie.Items.Serial;
+      h1.textContent = movie.Items;
 
       const p = document.createElement('p');
-      movie.Items.Serial = movie.Items.Serial.substring(0, 300);
-      p.textContent = `${movie.Items.Serial}...`;
+      movie.Items = movie.Items.substring(0, 300);
+      p.textContent = `${movie.Items}...`;
 
       container.appendChild(card);
       card.appendChild(h1);
