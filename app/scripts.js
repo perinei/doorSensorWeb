@@ -6,40 +6,44 @@ container.setAttribute('class', 'container');
 app.appendChild(container);
 
 var request = new XMLHttpRequest();
-request.open('GET', 'https://zjvba121aj.execute-api.us-east-1.amazonaws.com/dev', true);
-request.onload = async function () {
 
-  // Begin accessing JSON data here
-  var data = JSON.parse(this.response);
-  if (request.status >= 200 && request.status < 400) {
-    data.Items.forEach(item => {
-      const card = document.createElement('div');
-      card.setAttribute('class', 'card');
+main();
 
-      const h1 = document.createElement('h1');
-      h1.textContent = item.Serial;
+async function main() {
+  request.open('GET', 'https://zjvba121aj.execute-api.us-east-1.amazonaws.com/dev', true);
+  request.onload = function () {
 
-      var when = await convert(item.date_time);
+    // Begin accessing JSON data here
+    var data = JSON.parse(this.response);
+    if (request.status >= 200 && request.status < 400) {
+      data.Items.forEach(item => {
+        const card = document.createElement('div');
+        card.setAttribute('class', 'card');
 
-      const p = document.createElement('p');
-      p.textContent = `${item.status} at ${when}`;
+        const h1 = document.createElement('h1');
+        h1.textContent = item.Serial;
 
-      container.appendChild(card);
-      card.appendChild(h1);
-      card.appendChild(p);
+        var when = await convert(item.date_time);
 
-    });
-  } else {
-    const errorMessage = document.createElement('marquee');
-    errorMessage.textContent = `Something went wrong`;
-    app.appendChild(errorMessage);
+        const p = document.createElement('p');
+        p.textContent = `${item.status} at ${when}`;
+
+        container.appendChild(card);
+        card.appendChild(h1);
+        card.appendChild(p);
+
+      });
+    } else {
+      const errorMessage = document.createElement('marquee');
+      errorMessage.textContent = `Something went wrong`;
+      app.appendChild(errorMessage);
+    }
   }
 }
-
 request.send();
 // end
 
-async function convert(unixtimestamp){
+function convert(unixtimestamp){
  
   // Months array
   var months_arr = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
