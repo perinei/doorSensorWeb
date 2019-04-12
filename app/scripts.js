@@ -11,7 +11,7 @@ main();
 
 async function main() {
   request.open('GET', 'https://zjvba121aj.execute-api.us-east-1.amazonaws.com/dev', true);
-  request.onload = function () {
+  request.onload = async function () {
 
     // Begin accessing JSON data here
     var data = JSON.parse(this.response);
@@ -43,7 +43,7 @@ async function main() {
 request.send();
 // end
 
-function convert(unixtimestamp){
+async function convert(unixtimestamp){
  
   // Months array
   var months_arr = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
