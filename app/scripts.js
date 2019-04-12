@@ -7,7 +7,7 @@ app.appendChild(container);
 
 var request = new XMLHttpRequest();
 request.open('GET', 'https://zjvba121aj.execute-api.us-east-1.amazonaws.com/dev', true);
-request.onload = function () {
+request.onload = async function () {
 
   // Begin accessing JSON data here
   var data = JSON.parse(this.response);
