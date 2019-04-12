@@ -20,7 +20,7 @@ request.onload = function () {
       h1.textContent = item.Serial;
 
       const p = document.createElement('p');
-      p.textContent = item.date_time;
+      p.textContent = `${item.date_time} at ';
 
       container.appendChild(card);
       card.appendChild(h1);
