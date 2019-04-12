@@ -16,7 +16,7 @@ async function main() {
     // Begin accessing JSON data here
     var data = JSON.parse(this.response);
     if (request.status >= 200 && request.status < 400) {
-      data.Items.forEach(item => {
+      data.Items.forEach(async item => {
         const card = document.createElement('div');
         card.setAttribute('class', 'card');
 
@@ -43,7 +43,7 @@ async function main() {
 request.send();
 // end
 
-async function convert(unixtimestamp){
+function convert(unixtimestamp){
  
   // Months array
   var months_arr = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
