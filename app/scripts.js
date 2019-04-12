@@ -19,13 +19,13 @@ request.onload = function () {
       const h1 = document.createElement('h1');
       h1.textContent = item.Serial;
 
-      // const p = document.createElement('p');
-      // item.date_time = item.date_time.substring(0, 300);
-      // p.textContent = `${item.date_time}...`;
+      const p = document.createElement('p');
+      p.textContent = item.date_time;
 
       container.appendChild(card);
       card.appendChild(h1);
-      // card.appendChild(p);
+      card.appendChild(p);
+
     });
   } else {
     const errorMessage = document.createElement('marquee');
