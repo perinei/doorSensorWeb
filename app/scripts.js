@@ -20,7 +20,7 @@ request.onload = function () {
       h1.textContent = item.Serial;
 
       const p = document.createElement('p');
-      p.textContent = `${item.date_time} at `;
+      p.textContent = `${item.status} at ${item.date_time}`;
 
       container.appendChild(card);
       card.appendChild(h1);
@@ -29,7 +29,7 @@ request.onload = function () {
     });
   } else {
     const errorMessage = document.createElement('marquee');
-    errorMessage.textContent = `Gah, it's not working!`;
+    errorMessage.textContent = `Something went wrong`;
     app.appendChild(errorMessage);
   }
 }
