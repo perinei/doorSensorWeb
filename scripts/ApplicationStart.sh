@@ -1,4 +1,4 @@
 #!/bin/bash
-##### Start Service app
+##### Start http service
 
 sudo service httpd start
